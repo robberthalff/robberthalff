@@ -16,6 +16,7 @@ after_success:
   - cd ${REPO}
   - rm -rf `ls | grep -v 'md$' | grep -v '.git'`
   - cp -f -r ../${FILES} ./
+  - echo "robberthalff.com" > CNAME
   - ls
   - git remote
   - git config user.email ${EMAIL}
