@@ -31,4 +31,4 @@ install:
   - pip install Pygments
 
 script:
-  - hugo -s ./
+  - hugo -b="https://robberthalff.com" -s ./
