@@ -28,7 +28,7 @@ and then you may use the `webdev` command directly from your terminal.
 
 ### Step 2: Adding the flutter web repository as submodule
 
-Add the [Flutter Web Repository](`git@github.com:flutter/flutter_web.git`) as a submodule to your site's git repository:
+Add the [Flutter Web Repository](https://github.com/flutter/flutter_web) as a submodule to your site's git repository:
 ```bash
 git submodule add git@github.com:flutter/flutter_web.git
 ```
@@ -77,7 +77,7 @@ In order to do so run `webdev build`.
 
 This will create a build directory with an `index.html` file and a `main.dart.js`.
 
-Next just move both of these file files to the static directory of your [hugo][] installation:
+Next just move both of these files to the static directory of your [hugo][] installation:
 
 e.g.
 ```bash
@@ -100,7 +100,7 @@ of your [hugo][] site.
 
 In order to integrate this example into the site we can make a simple iframe [shortcode][].
 
-To do so paste the following code into a file named `iframe.html` in the *shortcodes* directory:
+To do so paste the following code into a file named *iframe.html* in the *shortcodes* directory:
 
 **themes/[your-theme]/layouts/shortcodes/iframe.html**:
 ```html
@@ -129,7 +129,7 @@ In addition we'll add some css to make the iframe responsively scale well:
 }
 ```
 This css will have to be loaded in the header of your site.
-In the case of my theme this can be found in `header.html`.
+For the theme I'm currently using this can be found in `header.html`.
 
 Add something like the following to load the css:
 
@@ -148,11 +148,10 @@ Which should result in:
 
 ### Step 4: Missing FontManifest.json 
 
-When you serve the example you'll notice that `main.dart.js` will try to load a `FontManifest.json` even though the example itself is not using any fonts or icons.
-
+When you serve the example you might notice that `main.dart.js` will try to load a `FontManifest.json` even though the example itself is not using any fonts or icons.
 In order to make this file available you must create it manually.
+It's contents will depend on which fonts your flutter example is using.
 
-It contents depends on which fonts your application is using.
 A good default would be:
 ```json
 [
