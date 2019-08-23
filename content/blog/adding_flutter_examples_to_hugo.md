@@ -89,6 +89,13 @@ cp examples/flutter/spinning_square/build/main.dart.js static/examples/flutter/s
 If all went well the example should now be available at the path `/examples/flutter/spinning_square`
 of your [hugo][] site.
 
+> Note:
+>
+> Although it's fine to add the examples directory to git it's probably not a smart idea
+> to also commit the build/ directory.
+> 
+> So make sure to add the `build/` directory to your `.gitignore` file. 
+
 ### Step 3: Creating a shortcode to serve the examples
 
 In order to integrate this example into the site we can make a simple iframe [shortcode][].
