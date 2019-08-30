@@ -73,28 +73,9 @@ import 'package:validations/validations.dart';
 
 part 'car.g.dart';
 
-class Driver {
-  Driver({this.name});
-  @NotNull()
-  String name;
-}
-
-@FieldMatch(
-  baseField: 'frontWheelCoverLeft',
-  matchField: 'frontWheelCoverRight',
-  baseFieldMessage: r'Left and Right front wheel covers should match!',
-)
-@FieldMatch(
-  baseField: 'rearWheelCoverLeft',
-  matchField: 'rearWheelCoverRight',
-  matchFieldMessage: r'Left and Right rear wheel covers should match!',
-)
 class Car {
   @NotNull()
   String manufacturer;
-
-  @Valid(message: 'There should be a valid driver!')
-  Driver driver;
 
   @Size(
     min: 2,
@@ -120,45 +101,10 @@ class Car {
     message: r'The top speed $validatedValue is higher than $value',
   )
   int topSpeed;
-
-  @NotEmpty()
-  String frontWheelCoverLeft;
-  @NotEmpty()
-  String frontWheelCoverRight;
-  @NotEmpty()
-  String rearWheelCoverLeft;
-  @NotEmpty()
-  String rearWheelCoverRight;
-
-  // Validations are declared in GenValidator
-  Decimal price;
-
-  // Validations are declared in GenValidator
-  bool isRegistered;
 }
-
-@GenValidator(
-  fields: {
-    'price': [
-      DecimalMax(
-        value: '100.00',
-        message: r'Price must not be higher than $value',
-      ),
-      DecimalMin(
-        value: '49.99',
-        message: r'Price must not be lower than $value',
-      ),
-    ],
-    'isRegistered': [
-      IsTrue(message: 'Car must be registered!'),
-    ],
-  },
-)
-class TestCarValidator extends Validator<Car> with _$TestCarValidator {}
 
 @GenValidator()
-class TestDriverValidator extends Validator<Driver> with _$TestDriverValidator {
-}
+class TestCarValidator extends Validator<Car> with _$TestCarValidator {}
 ```
 {{% /code-tab %}}
 {{% code-tab Fields %}}
