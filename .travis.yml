@@ -1,5 +1,7 @@
 language: python
 
+node_js: stable
+
 env:
   global:
     - ORGANIZATION="robberthalff"
@@ -25,10 +27,12 @@ after_success:
   - git commit -m "${MESSAGE}"
   - git push "https://${GITHUB_TOKEN}@${GH_REPO}" master --force
 
-install:
+install
   - wget https://github.com/gohugoio/hugo/releases/download/v0.57.2/hugo_0.57.2_Linux-64bit.deb
   - sudo dpkg -i hugo*.deb
   - pip install Pygments
+  - npm install -g hugulp
 
 script:
   - hugo -b="https://robberthalff.com/" -s ./
+  - hugulp build
