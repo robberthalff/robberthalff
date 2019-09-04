@@ -135,7 +135,7 @@ Application support for mainframe applications. Programming tasks included writi
 
 ### Hogeschool voor Economische Studies Amsterdam (1993-06 — 1996-04)
 
-  I did not finish this economic study, instead I took an offer 
+  I did not finish this study and instead I took an offer 
   to specialize myself in supporting mainframe applications which got me my first professional job.
 
 
